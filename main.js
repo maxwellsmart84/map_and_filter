@@ -47,5 +47,14 @@ $('#answer4').text("Items: " + finalName)
 //Question 5
 
 var material8 = _.filter(question4Arr, function(el, idx, arr){
-          if (el.materials.length >= 8);{return el};
+          return el.materials.length >= 8
+});
+var material8HTML = "";
+_.each(material8, function(el, idx, arr){
+  material8HTML += $('#answer5').text("Name:" + material8[idx].title + "Number of" + material8HTML[idx].materials.length + "Materials: " + material8HTML[idx].materials);
+});
+
+
+_.each(material8,(el, idx, arr){
+     console.log(material8[idx]);
 });
