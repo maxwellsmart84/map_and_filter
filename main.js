@@ -45,7 +45,7 @@ $('#answer4').text("Items: " + finalName)
 
 
 //Question 5
-var material8 = 
+
 var material8 = _.filter(question4Arr, function(el, idx, arr){
-    var mat8 = e
-})
+          if (el.materials.length >= 8);{return el};
+});
