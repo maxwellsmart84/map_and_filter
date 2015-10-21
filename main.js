@@ -49,12 +49,16 @@ $('#answer4').text("Items: " + finalName)
 var material8 = _.filter(question4Arr, function(el, idx, arr){
           return el.materials.length >= 8
 });
-var material8HTML = "";
-_.each(material8, function(el, idx, arr){
-  material8HTML += $('#answer5').text("Name:" + material8[idx].title + "Number of" + material8HTML[idx].materials.length + "Materials: " + material8HTML[idx].materials);
+var material8HTML = _.each(material8, function(el, idx){
+$('#answer5').text("Name:" + material8[idx].title + "Number of" + material8[idx].materials.length + "Materials: " + material8[idx].materials);
 });
 
-
-_.each(material8,(el, idx, arr){
-     console.log(material8[idx]);
+//Question 6
+var question6Arr = _.map(items,function(el, idx, arr){
+      return {whoMade: el.who_made}
 });
+
+var selfMade=_.filter(question6Arr, function(el, idx, arr){
+      return el.whoMade === "i_did"
+});
+$('#answer6').text(selfMade.length);
